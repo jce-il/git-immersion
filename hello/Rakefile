@@ -1,8 +1,7 @@
-#!/usr/bin/ruby -wKU
+require 'greeter'
 
-task :default => :run
+puts "What's your name"
+my_name = gets.strip
 
-task :run do
-  ruby '-Ilib', 'lib/hello.rb'
-end
-sdfasdfas
+greeter = Greeter.new(my_name)
+puts greeter.greet
