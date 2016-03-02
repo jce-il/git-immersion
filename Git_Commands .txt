@@ -1,0 +1,1204 @@
+Welcome to Git (version 1.9.5-preview20150319)
+
+
+Run 'git help git' to display the help index.
+Run 'git help <command>' to display help for specific commands.
+
+obenmosh@OBENMOSH-MOBL3 ~
+$ cd git_tutorial/work/hello/
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello
+$ init
+sh.exe": init: command not found
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello
+$ git init
+Initialized empty Git repository in c:/Users/obenmosh/git_tutorial/work/hello/.g
+it/
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit -m "First Commit"
+[master (root-commit) 82361da] First Commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   hello.rb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   hello.rb
+
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit
+[master 3be89dd] Using ARGV
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   hello.rb
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   hello.rb
+
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit -m "Added a default value"
+[master 88efc5e] Added a default value
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   hello.rb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add .
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   hello.rb
+
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit -m "Added a comment"
+[master 12b6456] Added a comment
+ 1 file changed, 1 insertion(+)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git log
+commit 12b6456a41e6a5d5c737e34cdedde4684b521b44
+Author: oshribm <oshribm88@gmail.com>
+Date:   Sat Jun 13 13:02:02 2015 +0300
+
+    Added a comment
+
+commit 88efc5eef4c0ffc98d2980edef034eaddec53e09
+Author: oshribm <oshribm88@gmail.com>
+Date:   Sat Jun 13 13:01:25 2015 +0300
+
+    Added a default value
+
+commit 3be89ddb2db42e459601285d4c8131f1cd040f7b
+Author: oshribm <oshribm88@gmail.com>
+Date:   Sat Jun 13 12:56:15 2015 +0300
+
+    Using ARGV
+
+commit 82361da207ce0af263c1190e10760c62c2ae4229
+Author: oshribm <oshribm88@gmail.com>
+Date:   Sat Jun 13 12:54:12 2015 +0300
+
+    First Commit
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git log --pretty=oneline
+12b6456a41e6a5d5c737e34cdedde4684b521b44 Added a comment
+88efc5eef4c0ffc98d2980edef034eaddec53e09 Added a default value
+3be89ddb2db42e459601285d4c8131f1cd040f7b Using ARGV
+82361da207ce0af263c1190e10760c62c2ae4229 First Commit
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+* 12b6456 2015-06-13 | Added a comment (HEAD, master) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist
+git: 'hist' is not a git command. See 'git --help'.
+
+Did you mean this?
+        bisect
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ go <branch>
+sh.exe": syntax error near unexpected token `newline'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git st
+git: 'st' is not a git command. See 'git --help'.
+
+Did you mean one of these?
+        status
+        reset
+        stage
+        stash
+        svn
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ go
+sh.exe": go: command not found
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git update
+git: 'update' is not a git command. See 'git --help'.
+
+Did you mean this?
+        update-ref
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git update-ref
+usage: git update-ref [options] -d <refname> [<oldval>]
+   or: git update-ref [options]    <refname> <newval> [<oldval>]
+   or: git update-ref [options] --stdin [-z]
+
+    -m <reason>           reason of the update
+    -d                    delete the reference
+    --no-deref            update <refname> not the one it points to
+    -z                    stdin has NUL-terminated arguments
+    --stdin               read updates from stdin
+
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git config
+usage: git config [options]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_rege
+x]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color <slot>    find the color configured: [default]
+    --get-colorbool <slot>
+                          find the color setting: [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+
+Other
+    -z, --null            terminate values with NUL byte
+    --includes            respect include directives on lookup
+
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist
+git: 'hist' is not a git command. See 'git --help'.
+
+Did you mean this?
+        bisect
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist
+* 12b6456 2015-06-13 | Added a comment (HEAD, master) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git checkout 82361da
+Note: checking out '82361da'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at 82361da... First Commit
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello ((82361da...))
+$ cat hello.rb
+Hello, World
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello ((82361da...))
+$ git checkout master
+Previous HEAD position was 82361da... First Commit
+Switched to branch 'master'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ cat hello.rb
+# Default is "World"
+name = ARGV.first || "World"
+
+puts "Hello, #{name}!"
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git tag v1
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git checkout v1^
+Note: checking out 'v1^'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at 88efc5e... Added a default value
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello ((88efc5e...))
+$ cat hello.rb
+name = ARGV.first || "World"
+
+puts "Hello, #{name}!"
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello ((88efc5e...))
+$ git tag v1-beta
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello ((v1-beta))
+$ git checkout v1
+Previous HEAD position was 88efc5e... Added a default value
+HEAD is now at 12b6456... Added a comment
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello ((v1))
+$ git checkout v1-beta
+Previous HEAD position was 12b6456... Added a comment
+HEAD is now at 88efc5e... Added a default value
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello ((v1-beta))
+$ git tag
+v1
+v1-beta
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello ((v1-beta))
+$ git hist master --all
+* 12b6456 2015-06-13 | Added a comment (tag: v1, master) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (HEAD, tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello ((v1-beta))
+$ git checkout master
+Previous HEAD position was 88efc5e... Added a default value
+Switched to branch 'master'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   hello.rb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git checkout hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ cat hello.rb
+# Default is "World"
+name = ARGV.first || "World"
+
+puts "Hello, #{name}!"
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   hello.rb
+
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git reset HEAD hello.rb
+Unstaged changes after reset:
+M       hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git checkout hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit -m "Oops, we didn't want this commit"
+[master 990d1cf] Oops, we didn't want this commit
+ Committer: unknown <obenmosh@OBENMOSH-MOBL3.ger.corp.intel.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git config --global user.name "oshribm"
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git config --global user.email oshribm88@gmail.com
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git revert HEAD
+[master 103ac45] Revert "Oops, we didn't want this commit"
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist
+* 103ac45 2015-06-13 | Revert "Oops, we didn't want this commit" (HEAD, master)
+* 990d1cf 2015-06-13 | Oops, we didn't want this commit [unknown]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist
+* 103ac45 2015-06-13 | Revert "Oops, we didn't want this commit" (HEAD, master)
+* 990d1cf 2015-06-13 | Oops, we didn't want this commit [unknown]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git reset --hard v1
+HEAD is now at 12b6456 Added a comment
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist
+* 12b6456 2015-06-13 | Added a comment (HEAD, tag: v1, master) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist --all
+* 12b6456 2015-06-13 | Added a comment (HEAD, tag: v1, master) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git tag -d oops
+error: tag 'oops' not found.
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist --all
+* 12b6456 2015-06-13 | Added a comment (HEAD, tag: v1, master) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit -m "Add an author comment"
+[master 8a65ccf] Add an author comment
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit --amend -m "Add an author/email comment"
+[master 8bc342d] Add an author/email comment
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist
+* 8bc342d 2015-06-13 | Add an author/email comment (HEAD, master) [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ mkdir lib
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git mv hello.rb lib
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        renamed:    hello.rb -> lib/hello.rb
+
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit -m "Moved hello.rb to lib"
+[master 76f436e] Moved hello.rb to lib
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename hello.rb => lib/hello.rb (100%)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add Rakefile
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit -m "Added a Rakefile."
+[master 1fcce64] Added a Rakefile.
+ 1 file changed, 7 insertions(+)
+ create mode 100644 Rakefile
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ rake
+sh.exe": rake: command not found
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ ls -C .git
+COMMIT_EDITMSG  ORIG_HEAD  description  index  logs     refs
+HEAD            config     hooks        info   objects
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ ls -C .git/objects/<dir>
+sh.exe": syntax error near unexpected token `newline'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ ls -C .git/objects/09
+ls: .git/objects/09: No such file or directory
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ ls -C .git/objects/d1
+a3385fcc07120a087c7bdd05bb643bb5cb6583
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ cat .git/config
+[core]
+        repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = true
+        symlinks = false
+        ignorecase = true
+        hideDotFiles = dotGitOnly
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ ls .git/refs
+heads  tags
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ ls .git/refs/heads
+master
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ ls .git/refs/tags
+v1  v1-beta
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ cat .git/refs/tags/v1
+12b6456a41e6a5d5c737e34cdedde4684b521b44
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ cat .git/HEAD
+ref: refs/heads/master
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist --max-count=1
+* 1fcce64 2015-06-13 | Added a Rakefile. (HEAD, master) [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git cat-file -t 1fcce64
+commit
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git cat-file -p 1fcce64
+tree fb807a0610fa050014146c197e549afa3ffd1575
+parent 76f436ee94d0974def13730b6ac4596a92381864
+author oshribm <oshribm88@gmail.com> 1434192862 +0300
+committer oshribm <oshribm88@gmail.com> 1434192862 +0300
+
+Added a Rakefile.
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git cat-file -p 1fcce64
+tree fb807a0610fa050014146c197e549afa3ffd1575
+parent 76f436ee94d0974def13730b6ac4596a92381864
+author oshribm <oshribm88@gmail.com> 1434192862 +0300
+committer oshribm <oshribm88@gmail.com> 1434192862 +0300
+
+Added a Rakefile.
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist
+* 1fcce64 2015-06-13 | Added a Rakefile. (HEAD, master) [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git cat-file -p fb807a0
+100644 blob 2c6d56e928587e058273c28ed488f3f17f6be08f    Rakefile
+040000 tree 999900df9f6375fe3e7c27ac2294007cb34c38b6    lib
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git cat-file -p 76f436e
+tree 9d370d787e17354e0aee856def9a23f31c5d00e5
+parent 8bc342d335e4590e1e20c110a7be29273f38f3af
+author oshribm <oshribm88@gmail.com> 1434192727 +0300
+committer oshribm <oshribm88@gmail.com> 1434192727 +0300
+
+Moved hello.rb to lib
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git cat-file -p 999900d
+100644 blob 4a6330f8d785e29eba478f743479cad513904af7    hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git cat-file -p 4a6330f
+# Default is World
+# Author: Jim Weirich (jim@somewhere.com)
+name = ARGV.first || "World"
+
+puts "Hello, #{name}!"
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git checkout -b greet
+Switched to a new branch 'greet'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git status
+On branch greet
+nothing to commit, working directory clean
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git add lib/greeter.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git commit -m "Added greeter class"
+[greet c95a297] Added greeter class
+ 1 file changed, 8 insertions(+)
+ create mode 100644 lib/greeter.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git add lib/hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git commit -m "Hello uses Greeter"
+[greet dbc971c] Hello uses Greeter
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git add Rakefile
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git commit -m "Updated Rakefile"
+[greet a2d6636] Updated Rakefile
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git hist --all
+* a2d6636 2015-06-13 | Updated Rakefile (HEAD, greet) [oshribm]
+* dbc971c 2015-06-13 | Hello uses Greeter [oshribm]
+* c95a297 2015-06-13 | Added greeter class [oshribm]
+* 1fcce64 2015-06-13 | Added a Rakefile. (master) [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git checkout master
+Switched to branch 'master'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ cat lib/hello.rb
+# Default is World
+# Author: Jim Weirich (jim@somewhere.com)
+name = ARGV.first || "World"
+
+puts "Hello, #{name}!"
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git checkout greet
+Switched to branch 'greet'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ cat lib/hello.rb
+require 'greeter'
+
+# Default is World
+name = ARGV.first || "World"
+
+greeter = Greeter.new(name)
+puts greeter.greet
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git checkout master
+Switched to branch 'master'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add README
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit -m "Added README"
+[master 4aa2622] Added README
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist --all
+* 4aa2622 2015-06-13 | Added README (HEAD, master) [oshribm]
+| * a2d6636 2015-06-13 | Updated Rakefile (greet) [oshribm]
+| * dbc971c 2015-06-13 | Hello uses Greeter [oshribm]
+| * c95a297 2015-06-13 | Added greeter class [oshribm]
+|/
+* 1fcce64 2015-06-13 | Added a Rakefile. [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git checkout greet
+Switched to branch 'greet'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git merge master
+Merge made by the 'recursive' strategy.
+ README | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git hist --all
+*   d7bb71a 2015-06-13 | Merge branch 'master' into greet (HEAD, greet) [oshribm
+|\
+| * 4aa2622 2015-06-13 | Added README (master) [oshribm]
+* | a2d6636 2015-06-13 | Updated Rakefile [oshribm]
+* | dbc971c 2015-06-13 | Hello uses Greeter [oshribm]
+* | c95a297 2015-06-13 | Added greeter class [oshribm]
+|/
+* 1fcce64 2015-06-13 | Added a Rakefile. [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git checkout master
+Switched to branch 'master'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add lib/hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit -m "Made interactive"
+[master 9b126a7] Made interactive
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist --all
+* 9b126a7 2015-06-13 | Made interactive (HEAD, master) [oshribm]
+| *   d7bb71a 2015-06-13 | Merge branch 'master' into greet (greet) [oshribm]
+| |\
+| |/
+|/|
+* | 4aa2622 2015-06-13 | Added README [oshribm]
+| * a2d6636 2015-06-13 | Updated Rakefile [oshribm]
+| * dbc971c 2015-06-13 | Hello uses Greeter [oshribm]
+| * c95a297 2015-06-13 | Added greeter class [oshribm]
+|/
+* 1fcce64 2015-06-13 | Added a Rakefile. [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git checkout greet
+Switched to branch 'greet'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git merge master
+Auto-merging lib/hello.rb
+CONFLICT (content): Merge conflict in lib/hello.rb
+Automatic merge failed; fix conflicts and then commit the result.
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet|MERGING)
+$ git add lib/hello.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet|MERGING)
+$ git commit -m "Merged master fixed conflict."
+[greet c6b0f8a] Merged master fixed conflict.
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git checkout greet
+Already on 'greet'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git hist
+*   c6b0f8a 2015-06-13 | Merged master fixed conflict. (HEAD, greet) [oshribm]
+|\
+| * 9b126a7 2015-06-13 | Made interactive (master) [oshribm]
+* |   d7bb71a 2015-06-13 | Merge branch 'master' into greet [oshribm]
+|\ \
+| |/
+| * 4aa2622 2015-06-13 | Added README [oshribm]
+* | a2d6636 2015-06-13 | Updated Rakefile [oshribm]
+* | dbc971c 2015-06-13 | Hello uses Greeter [oshribm]
+* | c95a297 2015-06-13 | Added greeter class [oshribm]
+|/
+* 1fcce64 2015-06-13 | Added a Rakefile. [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git reset --hard a2d6636
+HEAD is now at a2d6636 Updated Rakefile
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git hist --all
+* 9b126a7 2015-06-13 | Made interactive (master) [oshribm]
+* 4aa2622 2015-06-13 | Added README [oshribm]
+| * a2d6636 2015-06-13 | Updated Rakefile (HEAD, greet) [oshribm]
+| * dbc971c 2015-06-13 | Hello uses Greeter [oshribm]
+| * c95a297 2015-06-13 | Added greeter class [oshribm]
+|/
+* 1fcce64 2015-06-13 | Added a Rakefile. [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git checkout master
+Switched to branch 'master'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist
+* 9b126a7 2015-06-13 | Made interactive (HEAD, master) [oshribm]
+* 4aa2622 2015-06-13 | Added README [oshribm]
+* 1fcce64 2015-06-13 | Added a Rakefile. [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git reset --hard 4aa2622
+HEAD is now at 4aa2622 Added README
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist --all
+* 4aa2622 2015-06-13 | Added README (HEAD, master) [oshribm]
+| * a2d6636 2015-06-13 | Updated Rakefile (greet) [oshribm]
+| * dbc971c 2015-06-13 | Hello uses Greeter [oshribm]
+| * c95a297 2015-06-13 | Added greeter class [oshribm]
+|/
+* 1fcce64 2015-06-13 | Added a Rakefile. [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git checkout greet
+Switched to branch 'greet'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: Added greeter class
+Applying: Hello uses Greeter
+Applying: Updated Rakefile
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git hist
+* 1a1514a 2015-06-13 | Updated Rakefile (HEAD, greet) [oshribm]
+* ab5397a 2015-06-13 | Hello uses Greeter [oshribm]
+* 5a5c52b 2015-06-13 | Added greeter class [oshribm]
+* 4aa2622 2015-06-13 | Added README (master) [oshribm]
+* 1fcce64 2015-06-13 | Added a Rakefile. [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (greet)
+$ git checkout master
+Switched to branch 'master'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git merge greet
+Updating 4aa2622..1a1514a
+Fast-forward
+ Rakefile       | 2 +-
+ lib/greeter.rb | 8 ++++++++
+ lib/hello.rb   | 6 ++++--
+ 3 files changed, 13 insertions(+), 3 deletions(-)
+ create mode 100644 lib/greeter.rb
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git hist
+* 1a1514a 2015-06-13 | Updated Rakefile (HEAD, master, greet) [oshribm]
+* ab5397a 2015-06-13 | Hello uses Greeter [oshribm]
+* 5a5c52b 2015-06-13 | Added greeter class [oshribm]
+* 4aa2622 2015-06-13 | Added README [oshribm]
+* 1fcce64 2015-06-13 | Added a Rakefile. [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ cd ..
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ pwd
+/c/Users/obenmosh/git_tutorial/work
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ ls
+hello
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ git clone hello cloned_hello
+Cloning into 'cloned_hello'...
+done.
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ ls
+cloned_hello  hello
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ cd cloned_hello
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ LS
+README  Rakefile  lib
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git hist --all
+* 1a1514a 2015-06-13 | Updated Rakefile (HEAD, origin/master, origin/greet, orig
+* ab5397a 2015-06-13 | Hello uses Greeter [oshribm]
+* 5a5c52b 2015-06-13 | Added greeter class [oshribm]
+* 4aa2622 2015-06-13 | Added README [oshribm]
+* 1fcce64 2015-06-13 | Added a Rakefile. [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git remote
+origin
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git remote show origin
+* remote origin
+  Fetch URL: c:/Users/obenmosh/git_tutorial/work/hello
+  Push  URL: c:/Users/obenmosh/git_tutorial/work/hello
+  HEAD branch: master
+  Remote branches:
+    greet  tracked
+    master tracked
+  Local branch configured for 'git pull':
+    master merges with remote master
+  Local ref configured for 'git push':
+    master pushes to master (up to date)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git branch
+* master
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/greet
+  remotes/origin/master
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ cd ../hello
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add README
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit -m "Changed README in original repo"
+[master d2cc54f] Changed README in original repo
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ cd ../cloned_hello
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git fetch
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From c:/Users/obenmosh/git_tutorial/work/hello
+   1a1514a..d2cc54f  master     -> origin/master
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git hist --all
+* d2cc54f 2015-06-13 | Changed README in original repo (origin/master, origin/HE
+* 1a1514a 2015-06-13 | Updated Rakefile (HEAD, origin/greet, master) [oshribm]
+* ab5397a 2015-06-13 | Hello uses Greeter [oshribm]
+* 5a5c52b 2015-06-13 | Added greeter class [oshribm]
+* 4aa2622 2015-06-13 | Added README [oshribm]
+* 1fcce64 2015-06-13 | Added a Rakefile. [oshribm]
+* 76f436e 2015-06-13 | Moved hello.rb to lib [oshribm]
+* 8bc342d 2015-06-13 | Add an author/email comment [oshribm]
+* 12b6456 2015-06-13 | Added a comment (tag: v1) [oshribm]
+* 88efc5e 2015-06-13 | Added a default value (tag: v1-beta) [oshribm]
+* 3be89dd 2015-06-13 | Using ARGV [oshribm]
+* 82361da 2015-06-13 | First Commit [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ cat README
+This is the Hello World example from the git tutorial.
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git merge origin/master
+Updating 1a1514a..d2cc54f
+Fast-forward
+ README | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ cat README
+This is the Hello World example from the git tutorial.
+(changed in original)
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git pull
+Already up-to-date.
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git branch --track greet origin/greet
+Branch greet set up to track remote branch greet from origin.
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git branch -a
+  greet
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/greet
+  remotes/origin/master
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git hist --max-count=2
+* d2cc54f 2015-06-13 | Changed README in original repo (HEAD, origin/master, ori
+* 1a1514a 2015-06-13 | Updated Rakefile (origin/greet, greet) [oshribm]
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ cd ..
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ git clone --bare hello hello.git
+Cloning into bare repository 'hello.git'...
+done.
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ ls hello.git
+HEAD  config  description  hooks  info  objects  packed-refs  refs
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ cd hello
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git remote add shared ../hello.git
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git checkout master
+M       README
+Already on 'master'
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git add README
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git commit -m "Added shared comment to readme"
+[master 3ff936e] Added shared comment to readme
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git push shared master
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 392 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To ../hello.git
+   d2cc54f..3ff936e  master -> master
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ cd ../cloned_hello
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git remote add shared ../hello.git
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git branch --track shared master
+Branch shared set up to track local branch master.
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ git pull shared master
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From ../hello
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> shared/master
+Updating d2cc54f..3ff936e
+Fast-forward
+ README | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ cat README
+This is the Hello World example from the git tutorial.
+(Changed in the original and pushed to shared)
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ cd ..
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ cd cloned_hello/
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/cloned_hello (master)
+$ cd ..
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ git clone git://localhost/hello.git network_hello
+Cloning into 'network_hello'...
+remote: Counting objects: 40, done.
+remote: Compressing objects: 100% (32/32), done.
+Receiving objects:   5% (2/40)   d 0 (delta 0)R
+Receiving objects: 100% (40/40), done.
+Resolving deltas: 100% (3/3), done.
+Checking connectivity... done.
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ cd network_hello
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/network_hello (master)
+$ ls
+README  Rakefile  lib
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/network_hello (master)
+$ git push origin --all
+fatal: remote error: access denied or repository not exported: /hello.git
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/network_hello (master)
+$ cd ..
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ cd he
+hello/     hello.git/
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work
+$ cd hello
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$ git push origin --all
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+obenmosh@OBENMOSH-MOBL3 ~/git_tutorial/work/hello (master)
+$
