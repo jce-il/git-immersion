@@ -10,6 +10,12 @@ Instructions:
 1. The .rb files in the tutorials are Ruby code files, the exact content and logic is usually not the main focus here.
 1. Finally (step 53) [push][ref-push] all your commits, branches and tags and submit by creating a [pull request][pull-request]
 
+Other interesting tutorials:
+
+0. https://try.github.io
+0. https://pcottle.github.io/learnGitBranching/
+
+
 <!-- Links -->
 [forking]: https://guides.github.com/activities/forking/
 [ref-clone]: http://gitref.org/creating/#clone
