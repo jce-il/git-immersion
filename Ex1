@@ -1,0 +1,18 @@
+$ git hist
+
+c1ee81c 2016-03-17 | Added shared comment to readme (HEAD -> master, shared/master) [itzikrb]
+5ed4e9a 2016-03-17 | Changed README in original repo (shared) [itzikrb]
+81ce06c 2016-03-17 | Changed README in original repo [itzikrb]
+6adf0d2 2016-03-17 | Updated Rakefile (greet) [itzikrb]
+a0831d2 2016-03-17 | Hello uses Greeter [itzikrb]
+fe14a8f 2016-03-17 | Added greeter class [itzikrb]
+f371665 2016-03-17 | Added README [itzikrb]
+80d89bf 2016-03-17 | Added a Rakefile [itzikrb100]
+8fbc6c3 2016-03-17 | Moved hello.rb to lib [itzikrb100]
+355a27b 2016-03-17 | Add an author/email comment [itzikrb100]
+976f383 2016-03-17 | Added a comment (tag: v1) [itzikrb100]
+ffe23ed 2016-03-17 | Added a default value (tag: v1-beta) [itzikrb100]
+9b83852 2016-03-17 | made changes to c.rb [itzikrb100]
+69b465f 2016-03-17 | Unrelated change to c [itzikrb100]
+e6accb6 2016-03-17 | Changes for a and b [itzikrb100]
+dc5a66f 2016-03-17 | First Commit [itzikrb100]
